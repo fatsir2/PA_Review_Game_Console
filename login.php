@@ -56,6 +56,7 @@
       </label>
     </div>
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <p>Dont Have Account? <a href="register.php"> Create Account</a></p>
     <p class="mt-5 mb-3 text-muted">&copy; 2022 - Team 7 Lex</p>
   </form>
 </main>
