@@ -1,0 +1,44 @@
+.item-nav{
+    text-decoration: none;
+    color: pink;
+}
+.nav-item{
+    padding-right: 35px;
+}
+.banner {
+    height: 80vh;
+    background-color: rgb(43, 74, 175);
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(img/banner_console.jpg);
+    background-size: cover;
+    background-position: center;
+}
+.banner-content{
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    color: red;  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* .about-website{
+
+} */
+.about-content{
+    height: 100%; 
+    margin-top: 50px;
+}
+.judul-about {
+    margin-top: 25px;
+}
+
+.image-console{
+    height: 300px;
+    width: 300px;
+}
+hr {
+    margin: 1rem 0;
+    color: pink;
+    background-color: currentColor;
+    border: 0;
+    opacity: 0.25;
+  }
