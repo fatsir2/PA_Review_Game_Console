@@ -26,9 +26,6 @@
                             <a class="nav-link" href="#about">ABOUT</a> 
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#review">REVIEW CONSOLE</a> 
-                        </li>
-                        <li class="nav-item">
                             <a class="nav-link" href="#contact">CONTACT US</a>
                         </li>
                         <li class="nav-item">
