@@ -4,20 +4,20 @@
     if(isset($_POST['register'])){
     
         // filter data yang diinputkan
-        $id_usename = filter_input(INPUT_POST, 'funame', FILTER_SANITIZE_STRING);
-        $id_email = filter_input(INPUT_POST, 'fmail', FILTER_SANITIZE_STRING);
+        $username = filter_input(INPUT_POST, 'funame', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'fmail', FILTER_VALIDATE_EMAIL);
         // enkripsi password
-        $id_pass = password_hash($_POST["fpas"], PASSWORD_DEFAULT);
+        $password = password_hash($_POST["fpas"], PASSWORD_DEFAULT);
     
     
         // menyiapkan query
-        $sql = "INSERT INTO users (id_username, id_email, id_password) 
+        $sql = "INSERT INTO data_register (username, email, password) 
                 VALUES (:funame, :fmail, :fpas)";
-        $stmt = $conn->prepare($sql);
+        $stmt = $db->prepare($sql);
     
         // bind parameter ke query
         $params = array(
-            ":funame" => $name,
+            ":funame" => $username,
             ":fmail" => $email,
             ":fpas" => $password
         );
