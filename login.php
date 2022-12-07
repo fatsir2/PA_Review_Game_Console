@@ -2,19 +2,18 @@
 
   require_once("php/config.php");
 
-
   if(isset($_POST['login'])){
 
-    $username = filter_input(INPUT_POST, 'username', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'password', FILTER_SANITIZE_STRING);
+    $username = filter_input(INPUT_POST, 'leusername', FILTER_SANITIZE_STRING);
+    $password = filter_input(INPUT_POST, 'lepassword', FILTER_SANITIZE_STRING);
 
-    $sql = "SELECT * FROM users WHERE username=:username OR email=:email";
+    $sql = "SELECT * FROM data_register WHERE username=:username OR email=:email";
     $stmt = $db->prepare($sql);
     
     // bind parameter ke query
     $params = array(
-        ":username" => $username,
-        ":email" => $username
+        ":leusername" => $username,
+        ":leemail" => $username
     );
 
     $stmt->execute($params);
@@ -24,25 +23,17 @@
     // jika user terdaftar
     if($user){
         // verifikasi password
-        if(password_verify($password, $user["password"])){
+        if(password_verify($password, $user["lepassword"])){
             // buat Session
             session_start();
             $_SESSION["user"] = $user;
-            // login sukses, alihkan ke halaman timeline
+            // login sukses, alihkan ke halaman timeline (ini harus diganti)
             header("Location: timeline.php");
         }
     }
 }
 
 ?>
-/* 
-   session_start();
-   if(isset($_SESSION['username'])) {
-   header('location:index.php'); }
-?>
-*/
-
-
 
 <!doctype html>
 <html lang="en">
@@ -89,11 +80,11 @@
     <img class="mb-4" src="img/logo-website-tanpabg (2).png" alt="" width="172" height="75">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" name="iemail">
+      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="ipassowrd">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
       <label for="floatingPassword">Password</label>
     </div>
     <div class="checkbox mb-3">

@@ -1,3 +1,37 @@
+<?php
+
+    require_once("php/config.php");
+    
+    if(isset($_POST['register'])){
+    
+        // filter data yang diinputkan
+        $username = filter_input(INPUT_POST, 'lename', FILTER_SANITIZE_STRING);
+        $email = filter_input(INPUT_POST, 'leemail', FILTER_VALIDATE_EMAIL);
+        // enkripsi password
+        $password = password_hash($_POST["lepassword"], PASSWORD_DEFAULT);
+        
+
+        // menyiapkan query
+        $sql = "INSERT INTO data_register (username, email, password) 
+                VALUES (:lename, :leemail, :lepassword)";
+        $stmt = $db->prepare($sql);
+    
+        // bind parameter ke query
+        $params = array(
+            ":lename" => $username,
+            ":leemail" => $email,
+            ":lepassword" => $password
+        );
+    
+        // eksekusi query untuk menyimpan ke database
+        $saved = $stmt->execute($params);
+    
+        // jika query simpan berhasil, maka user sudah terdaftar
+        // maka alihkan ke halaman login
+        if($saved) header("Location: login.php");
+    }    
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,20 +52,20 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-              <form action="php/config-register.php" method="POST">
+              <form action="" method="POST">
 
                 <div class="form-outline mb-4">
-                  <input type="name" id="form3Example1cg" class="form-control form-control-lg" name="funame" />
+                  <input type="name" id="form3Example1cg" class="form-control form-control-lg" name="lename" />
                   <label class="form-label" for="form3Example1cg">Your Name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="fmail"/>
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" name="leemail"/>
                   <label class="form-label" for="form3Example3cg">Your Email</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="fpas" />
+                  <input type="password" id="form3Example4cg" class="form-control form-control-lg" name="lepassword" />
                   <label class="form-label" for="form3Example4cg">Password</label>
                 </div>
                 <div class="d-flex justify-content-center">
