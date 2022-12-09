@@ -1,40 +1,3 @@
-<?php
-
-  require_once("php/config.php");
-
-  if(isset($_POST['login'])){
-
-    $username = filter_input(INPUT_POST, 'leusername', FILTER_SANITIZE_STRING);
-    $password = filter_input(INPUT_POST, 'lepassword', FILTER_SANITIZE_STRING);
-
-    $sql = "SELECT * FROM data_register WHERE username=:username OR email=:email";
-    $stmt = $db->prepare($sql);
-    
-    // bind parameter ke query
-    $params = array(
-        ":leusername" => $username,
-        ":leemail" => $username
-    );
-
-    $stmt->execute($params);
-
-    $user = $stmt->fetch(PDO::FETCH_ASSOC);
-
-    // jika user terdaftar
-    if($user){
-        // verifikasi password
-        if(password_verify($password, $user["lepassword"])){
-            // buat Session
-            session_start();
-            $_SESSION["user"] = $user;
-            // login sukses, alihkan ke halaman timeline (ini harus diganti)
-            header("Location: timeline.php");
-        }
-    }
-}
-
-?>
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -76,23 +39,18 @@
   <body class="text-center">
     
 <main class="form-signin">
-  <form>
+  <form action="php/config-login.php" method="POST">
     <img class="mb-4" src="img/logo-website-tanpabg (2).png" alt="" width="172" height="75">
     <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
     <div class="form-floating">
-      <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+      <input type="email" class="form-control" id="floatingInput" name="email" placeholder="name@example.com" >
       <label for="floatingInput">Email address</label>
     </div>
     <div class="form-floating">
-      <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+      <input type="password" class="form-control" id="floatingPassword" name="password" placeholder="Password" >
       <label for="floatingPassword">Password</label>
     </div>
-    <div class="checkbox mb-3">
-      <label>
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-    </div>
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <input type="submit" class="btn btn-success btn-block" name="login" value="Sign In" />
     <p>Dont Have Account? <a href="register.php"> Create Account</a></p>
     <p class="mt-5 mb-3 text-muted">&copy; 2022 - Team 7 Lex</p>
   </form>

@@ -43,8 +43,7 @@
             <div class="text-center">
                 <p class="fs-3">Selamat Datang di Review Game Console</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati maxime fuga, molestiae odio consectetur delectus quasi itaque eum maiores ea, vitae exercitationem blanditiis distinctio numquam in, debitis nihil dolore?</p>
-                <button type="button" class="btn btn-primary btn-md">Lets Compare Console</button>
-                <button type="button" class="btn btn-secondary btn-md">List Console Game</button>
+                <button type="button" class="btn btn-primary btn-md">Lets Compare and List Console</button>
             </div>
         </div>
     </div>
@@ -70,28 +69,28 @@
     <!-- Wrapper container -->
     <h1 class="text-center">Contact Us</h1>
     <div class="container py-4" id="contact">
-    <!-- Bootstrap 5 starter form -->
-    <form id="contactForm">
-    <!-- Name input -->
-    <div class="mb-3">
-        <label class="form-label" for="name">Name</label>
-        <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" />
-    </div>
-    <!-- Email address input -->
-    <div class="mb-3">
-        <label class="form-label" for="emailAddress">Email Address</label>
-        <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" />
-    </div>
-    <!-- Message input -->
-    <div class="mb-3">
-        <label class="form-label" for="message">Message</label>
-        <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
-    </div>
-    <!-- Form submit button -->
-    <div class="d-grid">
-        <button class="btn btn-primary btn-lg" type="submit">Submit</button>
-    </div>
-    </form>
+        <!-- Bootstrap 5 starter form -->
+        <form id="contactForm" action="php/config-contact.php" method="POST">
+        <!-- Name input -->
+            <div class="mb-3">
+                <label class="form-label" for="name">Name</label>
+                <input class="form-control" id="name" type="text" placeholder="Name" data-sb-validations="required" name="name" />
+            </div>
+            <!-- Email address input -->
+            <div class="mb-3">
+                <label class="form-label" for="emailAddress">Email Address</label>
+                <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required, email" name="email"/>
+            </div>
+            <!-- Message input -->
+            <div class="mb-3">
+                <label class="form-label" for="message">Message</label>
+                <textarea class="form-control" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required" name="pesan"></textarea>
+            </div>
+            <!-- Form submit button -->
+            <div class="d-grid">
+                <input type="submit" class="btn btn-success btn-block" name="submit" value="Daftar" />
+            </div>
+        </form>
     </div>
     <!-- Awalan footer -->
     <footer class="footer mt-auto py-3 bg-light">
