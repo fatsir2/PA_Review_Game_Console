@@ -43,7 +43,7 @@
             <div class="text-center">
                 <p class="fs-3">Selamat Datang di Review Game Console</p>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati maxime fuga, molestiae odio consectetur delectus quasi itaque eum maiores ea, vitae exercitationem blanditiis distinctio numquam in, debitis nihil dolore?</p>
-                <button type="button" class="btn btn-primary btn-md">Lets Compare and List Console</button>
+                <a href="list-compare-product.php"><button type="button" class="btn btn-primary btn-md" >Lets Compare and List Console</button></a> 
             </div>
         </div>
     </div>
