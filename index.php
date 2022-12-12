@@ -42,7 +42,7 @@
         <div class="container banner-content col-lg-6">
             <div class="text-center">
                 <p class="fs-3">Selamat Datang di Review Game Console</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id obcaecati maxime fuga, molestiae odio consectetur delectus quasi itaque eum maiores ea, vitae exercitationem blanditiis distinctio numquam in, debitis nihil dolore?</p>
+                <p>Kami akan memberikan saran konsol terbaik sesuai dengan keinginan dan budget Anda</p>
                 <a href="list-compare-product.php"><button type="button" class="btn btn-primary btn-md" >Lets Compare and List Console</button></a> 
             </div>
         </div>
@@ -54,8 +54,8 @@
         <div class="container about-content">
             <div class="row">
                 <div class="col text-end">
-                    <p>Bingung dalam memilih Console? kamu bisa membandingkan console</p>
-                    <p>Dengan adanya website "Review Console" maka kamu dapat membandingkan console yang diinginkan secara langsung. Dapat mencari item secara spesifik menggunakan website kami ini.</p>
+                    <p>Bingung dalam memilih Console? Tenang kami akan berikan solusinya </p>
+                    <p>Melalui fitur compare kamu dapat membandingkan console yang diinginkan secara langsung dan Dapat mengetahui spesifikasi secara jelas.</p>
                 </div>
                 <div class="col">
                     <img src="img/logo_console.png" class="image-console mx-auto d-block" alt="logo_console">

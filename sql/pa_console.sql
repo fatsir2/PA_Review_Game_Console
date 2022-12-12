@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 06, 2022 at 01:49 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- Generation Time: Dec 10, 2022 at 05:25 PM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,35 +24,47 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `data_contactus`
+--
+
+CREATE TABLE `data_contactus` (
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `pesan` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `data_contactus`
+--
+
+INSERT INTO `data_contactus` (`nama`, `email`, `pesan`) VALUES
+('Faris Atsir Izzudin El Wahyu', 'fatsir2@gmail.com', 'test'),
+('test', 'test@gmail.com', 'testest213123123123');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `data_register`
 --
 
 CREATE TABLE `data_register` (
-  `id_user` int(11) NOT NULL,
-  `id_username` varchar(100) NOT NULL,
-  `id_email` varchar(100) NOT NULL,
-  `id_pass` varchar(255) CHARACTER SET macce COLLATE macce_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `username` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(255) CHARACTER SET macce COLLATE macce_bin NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Dumping data for table `data_register`
 --
 
---
--- Indexes for table `data_register`
---
-ALTER TABLE `data_register`
-  ADD PRIMARY KEY (`id_user`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `data_register`
---
-ALTER TABLE `data_register`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+INSERT INTO `data_register` (`username`, `email`, `password`) VALUES
+(':username', ':email', ':password'),
+(':username', ':email', ':password'),
+('Faris Atsir Izzudin El Wahyu', '123123@gmail.com', '$2y$10$Gu.XPGeVRu/Krh9tOXgPAeXVu01bY2X3Qvy/auceRYSGSBQEmaqLC'),
+('faris', '123@gmail.com', '$2y$10$E6Zdjm6Qdmcp/raR6JX0/OCzwuVgYrK5M952KiyW4CnWjYKBNmrPu'),
+('Far', 'far@gmail.com', '$2y$10$wLlMB9cn5XYqPUp/TkdTauSldsEtaw2Qj4PcUDDlRBT4ZdP7BV.iS'),
+('faris', 'fatsir2@gmail.com', '$2y$10$khlglTkUVAPgQVOFuoOKmuiEe9/tletidCN8Kbr.B/tLOjphOKyna'),
+('git', 'git@gmail.com', '$2y$10$nkzwSOSvG/.SGCr2IOS.heO4U0ufxpMVOkzJoTgLZ0NnRwzLF1.8i');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
